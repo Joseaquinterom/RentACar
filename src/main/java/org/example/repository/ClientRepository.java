@@ -3,10 +3,11 @@ package org.example.repository;
 import org.example.model.Client;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class ClientRepository implements IClientRepository{
 
-    private final ArrayList<Client> clients;
+    private ArrayList<Client> clients;
 
     public ClientRepository() {
         clients = new ArrayList<>();
@@ -31,16 +32,20 @@ public class ClientRepository implements IClientRepository{
     }
 
     public void deleteById(Long id){
-        for (Client client : clients) {
-            if (client.getId() == id) {
-                clients.remove(client);
-                break;
+        if(!isEmpty()) {
+            Iterator<Client> iterator = clients.iterator();
+            while (iterator.hasNext()){
+                Client client = iterator.next();
+                if (client.getId() == id) {
+                    clients.remove(client);
+                    break;
+                }
             }
         }
     }
 
     public Long nextIdAvailable(){
-        if(!clients.isEmpty()){
+        if(!isEmpty()){
             return clients.get(clients.size()-1).getId() + 1;
         }
         else{
@@ -49,19 +54,32 @@ public class ClientRepository implements IClientRepository{
     }
 
     public Client findById(Long id) {
-        for (Client client : clients) {
-               if(client.getId() == id){
-                   return client;
-               }
+        if(!isEmpty()){
+            for (Client client : clients) {
+                if(client.getId() == id){
+                    return client;
+                }
+            }
+            return null;
         }
         return null;
     }
 
+    public boolean isEmpty(){
+        if(clients.size() == 0){
+            return true;
+        }
+        return false;
+    }
+
     public Client findByDni(String dni){
-        for (Client client : clients) {
-            if(client.getDni().equals(dni)){
-                return client;
+        if(!isEmpty()){
+            for (Client client : clients) {
+                if(client.getDni().equals(dni)){
+                    return client;
+                }
             }
+            return null;
         }
         return null;
     }

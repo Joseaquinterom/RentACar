@@ -5,6 +5,10 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+/**
+ * @Author: José Antonio Quintero Maya
+*/
+
 class ClientRepositoryTest {
 
     ClientRepository repository;
@@ -33,6 +37,8 @@ class ClientRepositoryTest {
         Client client = new Client("48572039G", "Tamara", "Sánchez");
         repository.add(client);
         Assertions.assertEquals(3, repository.findAll().size());
+        repository.deleteById(2L);
+        Assertions.assertEquals(2, repository.findAll().size());
     }
 
     @Test

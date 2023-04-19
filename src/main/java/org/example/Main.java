@@ -1,5 +1,7 @@
 package org.example;
-
+/**
+ * @Author: José Antonio Quintero Maya
+ */
 
 import org.example.view.Dialog;
 

@@ -1,12 +1,11 @@
 package org.example.repository;
 
 import org.example.model.Car;
-import org.example.model.Client;
 
 import java.util.ArrayList;
 
 /**
- * @Author: Andrés Fernández Pereira
+ * @Author: José Antonio Quintero Maya
  */
 public interface ICarRepository {
     void add(Car car);
@@ -16,4 +15,5 @@ public interface ICarRepository {
     Car findById(Long id);
     Car findBylicensePlate(String licensePlate);
     void update(Car car);
+
 }

@@ -5,7 +5,9 @@ import org.example.repository.ClientRepository;
 import org.example.repository.IClientRepository;
 
 import java.util.ArrayList;
-
+/**
+ * @Author: José Antonio Quintero Maya
+ */
 public class ClientServiceImpl implements IClientService{
 
     private IClientRepository repository;

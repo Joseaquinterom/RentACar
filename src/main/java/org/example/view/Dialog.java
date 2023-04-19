@@ -4,7 +4,9 @@ import org.example.controller.ClientController;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
-
+/**
+ * @Author: José Antonio Quintero Maya
+ */
 public class Dialog {
 
     private ClientController clientController;

@@ -1,5 +1,9 @@
 package org.example.model;
 
+/**
+ * @Author: José Antonio Quintero Maya
+ */
+
 public class Client {
     private Long id;
     private String dni;

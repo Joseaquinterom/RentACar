@@ -3,7 +3,9 @@ package org.example.repository;
 import org.example.model.Client;
 
 import java.util.ArrayList;
-
+/**
+ * @Author: José Antonio Quintero Maya
+ */
 public interface IClientRepository {
 
     void add(Client client);
